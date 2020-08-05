@@ -1,22 +1,14 @@
 function menuActive(event) {
-    const parent = event.target.closest(".menu__item")
-    const subMenu = parent.querySelector(".menu_sub")
+    const parent = event.target.closest(".menu__item");
+    const subMenu = parent.querySelector(".menu_sub");
     if (subMenu) {
-        subMenu.classList.add("menu_active")
-        return false
-    }
-
-
+        subMenu.classList.toggle("menu_active");
+        return false;
+    };
 }
 (function () {
-    const allMenu = document.querySelectorAll(".menu__link")
-
-
+    const allMenu = document.querySelectorAll(".menu__link");
     allMenu.forEach(menu => {
-        menu.onclick = (event) => menuActive(event)
-    })
-
-
-
-
+        menu.onclick = (event) => menuActive(event);
+    });
 }());
