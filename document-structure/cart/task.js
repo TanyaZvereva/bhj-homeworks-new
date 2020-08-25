@@ -6,7 +6,7 @@ Array.from(dec).forEach(decEl => {
     decEl.onclick = () => {
         const valueEl = decEl.closest(".product__quantity-controls").querySelector(".product__quantity-value");
         const value = +valueEl.textContent;
-        if (value > 0) valueEl.innerText = value - 1;
+        if (value > 1) valueEl.innerText = value - 1;
     };
 });
 Array.from(inc).forEach(incEl => {
@@ -26,7 +26,7 @@ Array.from(buttons).forEach(button => {
         if (currentProduct) {
             const countEl = currentProduct.querySelector(".cart__product-count");
             const count = +countEl.innerText;
-            countEl.innerText = count + 1;
+            countEl.innerText = count + +value;
         } else {
             basket.innerHTML += `<div class="cart__product" data-id="${id}">
         <img class="cart__product-image" src="${img}">

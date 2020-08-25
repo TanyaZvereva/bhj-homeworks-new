@@ -12,6 +12,7 @@ function addTask() {
     <a href="#" class="task__remove">&times;</a>
   </div>
 `;
+        input.value = "";
         const forRemove = document.getElementsByClassName("task__remove");
         Array.from(forRemove).forEach(element => {
             element.onclick = (event) => {
